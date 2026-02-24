@@ -1,4 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+This is a responsive dashboard application built with Next.js, Tailwind CSS, and React. It features a collapsible sidebar, interactive cards, and a clean user interface for managing data or content.
+
+The dashboard is designed to be mobile-friendly, easy to navigate, and highly customizable.
+
+Features
+
+Collapsible Sidebar – Expand or collapse the sidebar for a compact or full menu view.
+
+Active Link Highlighting – Tracks the currently selected menu item.
+
+Interactive Cards – Clickable cards with icons and hover effects.
+
+Responsive Layout – Works on desktop, tablet, and mobile devices.
+
+Customizable Styling – Built with Tailwind CSS for easy theming.
+
+Help Section – Includes a bottom section for FAQs or support links.
+
+Logout Button – Styled logout button for user actions.
+
+Tech Stack
+
+Next.js – React framework for server-side rendering and routing.
+
+Tailwind CSS – Utility-first CSS framework for styling.
+
+React Hooks – For state management and component logic.
+
+Lucide React – Icon library for clean, scalable icons.
 
 ## Getting Started
 
