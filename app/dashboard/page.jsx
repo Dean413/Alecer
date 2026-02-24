@@ -54,9 +54,10 @@ const Dashboard = () => {
                         </div>    
                         <div className="mt-8 bg-white rounded-2xl p-6 shadow-sm border border-gray-300">
                             <div className="flex justify-between items-center mb-6">
-                                <h2 className="text-lg font-semibold">Recent Transactions</h2>
-                                <button className="text-blue-600 text-sm font-medium hover:underline">
+                                <h2 className="text-sm md:text-lg font-semibold">Recent Transactions</h2>
+                                <button  className="text-blue-600 text-xs md:text-sm font-medium hover:underline">
                                     View All
+            
                                 </button>
                             </div>
                             {transactions.map((transaction) => (
@@ -67,7 +68,8 @@ const Dashboard = () => {
                                         amount= {transaction.amount}
                                         status= {transaction.status}
                                         type= {transaction.type}
-                                        icon={transaction.icon}                        
+                                        icon={transaction.icon}   
+                                        flag={transaction.flag}                     
                                     />
                                 </div>
                             ))}

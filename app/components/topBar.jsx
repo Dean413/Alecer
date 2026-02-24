@@ -8,7 +8,7 @@ const Topbar = ({onClickMobileMenu}) => {
         onClick={onClickMobileMenu}
         className="md:invisible"
       >
-        <PanelLeft size={24} />
+        <PanelLeft size={24} className="text-gray-500" />
       </button>
 
      

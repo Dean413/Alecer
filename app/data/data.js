@@ -154,7 +154,7 @@ export const wallets = [
     currencyIcon: "€",
     flag: "/assets/euro-flag.svg",
     balance: "1,480.10",
-    kycLevel: "KYC level 2",
+    kycLevel: "Verified",
     account: "*****9568149"
   },
 ]
@@ -166,6 +166,7 @@ export const transactions = [
     amount: "+$250.00",
     status: "Completed",
     type: "income",
+    flag: "/assets/uk-flag.svg",
     icon: <ArrowDownLeft size={24} color="lightgreen"/>
   },
 
@@ -175,7 +176,7 @@ export const transactions = [
     amount: "-$180.00",
     status: "Pending",
     type: "pending",
-    icon: <ArrowRightLeft size={24} color="#007BFF" />
+    icon: <ArrowRightLeft size={15} color="#007BFF" />
   },
 
   {       
@@ -184,7 +185,8 @@ export const transactions = [
     amount: "+€500.00",
     status: "Completed",
     type: "income",
-    icon: <ArrowUpRight size={24} color="lightgreen" />
+    icon: <ArrowUpRight size={24} color="lightgreen" />,
+    flag: "/assets/ngn-flag.svg",
   },
   
   {
@@ -193,7 +195,8 @@ export const transactions = [
     amount: "-£75.50",
     status: "Reversed",
     type: "reversed",
-    icon: <ArrowDownLeft size={24} color="lightgreen"/>      
+    icon: <ArrowDownLeft size={24} color="lightgreen"/>   ,
+    flag: "/assets/ngn-flag.svg",   
   }
 ]
 

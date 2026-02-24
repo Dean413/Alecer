@@ -27,7 +27,7 @@ const Sidebar = () => {
         <div className="space-y-3 "> 
             {sideBar.map((side) => (
                 <div key={side.header}>
-                  {!open && (<h1 className={`${inter.className} text-gray-500 font-bold px-4 text-xs`}>{side.header}</h1>)}
+                  {!open && (<h1 className={`${inter.className} text-gray-500 hidden md:block font-bold px-4 text-xs`}>{side.header}</h1>)}
                     {side.items.map((index) => (
                       <Link onClick={() => setActiveLink(index.title)} key={index.title} href="#" className="text-gray-500 bg-green-500">
                         <div 
@@ -41,16 +41,16 @@ const Sidebar = () => {
         </div>
       </div>
 
-      <div className="mb-50">
+      <div className="mb-32 md:mb-48 ">
         <button className={`flex ${open ? "ml-0" : "ml-4"} text-[#DC2626]   gap-3 mb-5   cursor-pointer`}>
-          <Image src="/assets/logout.svg" width={18} height={18} alt="arrow" className={`${open ? "ml-2" : ""} ${open ? "mt-8" : ""}`} />
+          <Image src="/assets/logout.svg" width={18} height={18} alt="arrow" className={`${open ? "ml-2 mt-8" : ""}`} />
           {!open && (<p>Logout</p>)}
         </button>
         
-        {!open && (<div className="bg-[#007BFF]  w-48 h-32 px-1 rounded-xl text-[9px]  text-white font-extralight">
+        {!open && (<div className="bg-[#007BFF] hidden md:block  w-48 h-32 px-1 rounded-xl text-[9px]  text-white font-extralight">
         <div className="ml-5 pt-5"><Image src="/assets/user-tag.svg" width={20} height={20} alt="user-tag"/></div>
         <p className="my-5 px-5">Got some questions, inquiries or need help?</p>
-        <p className="px-5 text-gray-300">Visit AlecerPay Help Desk Here</p>
+        <a href="#" className="px-5 text-gray-300 underline">Visit AlecerPay Help Desk Here</a>
       </div>)}
       </div>
     </aside>
