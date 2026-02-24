@@ -6,10 +6,11 @@ import Topbar from "../components/topBar";
 import { useState } from "react";
 import { transactions, wallets } from "../data/data";
 import { ActionCard, Transaction } from "../components/actionsCard";
-import { ArrowLeftRight, FileText, Plus, Send } from "lucide-react";
+import { ArrowLeftRight, Eye, EyeOff, FileText, Plus, Send } from "lucide-react";
 
 const Dashboard = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
+    const [show, setShow] = useState(false)
 
     return (
         <div className="flex min-h-screen ">
@@ -22,7 +23,6 @@ const Dashboard = () => {
                     </div>
                 </div>
             )}
-        
 
             <div className="flex-1">
                 <Topbar onClickMobileMenu={() => setMobileOpen(true)} />
@@ -30,7 +30,14 @@ const Dashboard = () => {
                 <main className="p-8 mt-15 md:ml-72">
                     <h1 className="text-3xl font-bold">Welcome back, Joy!</h1>
                     <p className="text-gray-500 text-sm mt-2">Here's your financial overview</p>
-                    <p className="font-semibold text-2xl mt-6 mb-4">Your Wallets</p>
+                    <div className="flex justify-between mt-6 mb-4">
+                        <p className="font-semibold text-2xl ">Your Wallets</p> 
+                        <button className="flex gap-2 mt-2" onClick={() => setShow(!show)}>
+                            <p>{show ? <Eye size={18} /> : <EyeOff size={18} />}</p>
+                            <p className="text-sm">{show ? "hide all" : "show all"}</p>
+                        </button>
+                    </div>
+                   
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                         {wallets.map((wallet) => (
                             <WalletCard
