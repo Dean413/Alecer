@@ -7,10 +7,12 @@ import { useState } from "react";
 import { transactions, wallets } from "../data/data";
 import { ActionCard, Transaction } from "../components/actionsCard";
 import { ArrowLeftRight, Eye, EyeOff, FileText, Plus, Send } from "lucide-react";
+import StateManageMentStore from "../utils/zustand";
 
 const Dashboard = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
     const [show, setShow] = useState(false)
+    const {open} = StateManageMentStore()
 
     return (
         <div className="flex min-h-screen ">
@@ -27,7 +29,7 @@ const Dashboard = () => {
             <div className="flex-1">
                 <Topbar onClickMobileMenu={() => setMobileOpen(true)} />
 
-                <main className="p-8 mt-15 md:ml-72">
+                <main className={`p-8 mt-15 ${open ? "md:ml-24" : "md:ml-64"}`}>
                     <h1 className="text-3xl font-bold">Welcome back, Joy!</h1>
                     <p className="text-gray-500 text-sm mt-2">Here's your financial overview</p>
                     <div className="flex justify-between mt-6 mb-4">

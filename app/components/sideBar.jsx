@@ -4,6 +4,7 @@ import {sideBar} from "../data/data"
 import { PanelLeft } from "lucide-react";
 import {  Inter } from "next/font/google";
 import { useState } from "react";
+import StateManageMentStore from "../utils/zustand";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -13,14 +14,14 @@ const inter = Inter({
 
 const Sidebar = () => {
   const [activeLink, setActiveLink] = useState("")
-  const [open, setOpen] = useState(false)
+  const {open, setOpen, toggleOpen} = StateManageMentStore()
   return (
     <aside className={`${open ? "w-20" : "w-56"} bg-[#E6F2FF] fixed h-screen px-5 transition-all duration-300 z-50 flex flex-col justify-between`}>
       <div>
         <h2 className="max-w-60 mb-5 flex justify-between border-b  border-gray-300">
             {open ? (<Image className=" mb-3 ml-2 md:mb-0 md:mt-5 md:w-7 h-7" src="/assets/logo-only.png"   width={10}  height={10} alt="logo" />) : <Image className="w-34 ml-6 mt-3  mb-3 md:mb-0 md:w-28" src="/assets/logo.svg"   width={100}  height={100} alt="logo" />}
             <div className="mb-10">
-              <PanelLeft size={open ? 15 : 24} onClick={() => setOpen(!open)} className="text-gray-400 hidden ml-2 md:block" />
+              <PanelLeft size={open ? 15 : 24} onClick={toggleOpen} className="text-gray-400 hidden ml-2 md:block" />
             </div>
         </h2>
 
