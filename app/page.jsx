@@ -1,13 +1,15 @@
+"use client"
 import Image from "next/image";
 import {cards, stats, reason} from "./data/data"
 import FeatureCard from "./components/featuresCard"
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import Modal from "./components/modal";
 
 export default function Home() {
-  
-
-  return (
+  return (  
     <main className=" text-gray-900">
+      <Modal />
       <nav className="flex justify-around items-center px-8 py-4 bg-white">
         <h1 className="text-2xl font-bold text-[#007BFF]">AlecerPay</h1>
        
@@ -18,18 +20,13 @@ export default function Home() {
         </div>
 
         <div className="space-x-4">
-          <button className="text-sm cursor-pointer"><Link href="/dashboard">Sign In</Link></button>
-          <button className="bg-blue-600 cursor-pointer text-white px-4 py-2 rounded-full text-sm">
-            Sign up
-          </button>
+          <button className="text-sm cursor-pointer">Sign In</button>
+          <button className="bg-blue-600 cursor-pointer text-white px-4 py-2 rounded-full  text-sm"><Link href="/dashboard">Sign Up</Link></button>
         </div>
       </nav>
 
       <section className="text-center py-24 px-6 hero-gradient">
-        <span className="text-xs bg-[#00C4B41A] text-[#00C4B4] px-4 py-1 rounded-full">
-          Join 50,000+ users worldwide
-        </span>
-
+        <span className="text-xs bg-[#00C4B41A] text-[#00C4B4] px-4 py-1 rounded-full">Join 50,000+ users worldwide</span>
         <h1 className="text-2xl md:text-6xl font-bold mt-6 max-w-2xl mx-auto">Empowering global payments for Africa</h1>
 
         <p className="text-gray-500 text-lg mt-4 max-w-2xl mx-auto">
@@ -53,11 +50,9 @@ export default function Home() {
 
           <p className="text-gray-500 mt-4 max-w-xl text-lg mx-auto">Powerful features designed for freelancers, remote workers, and businesses across Africa</p>
           
-
           {/* Cards */}
           <div className="mt-16  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-             {cards.map((card) => (
-                
+            {cards.map((card) => (
               <FeatureCard 
                 key={card.title}
                 icon={card.icon}
@@ -65,7 +60,7 @@ export default function Home() {
                 title={card.title}
                 text={card.text}
               />
-              ))}
+            ))}
           </div>
         </div>
       </section>
@@ -104,18 +99,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Final CTA Section */}
       <section className="py-24 mb-60 px-6 bg-[#00C4B4] text-white text-center">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-5xl font-semibold text-white">Ready to transform your finances?</h2>
-
-          
-            <p className="mt-4 font-extralight text-gray-200 mx-auto max-w-2xl text-[18px]">Join thousands of users who are already managing their global payments with AlecerPay</p>
-          
-
-          <button className="mt-8 bg-white text-[#007BFF] text-sm px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition">
-            Create Your Account Now
-          </button>
+          <p className="mt-4 font-extralight text-gray-200 mx-auto max-w-2xl text-[18px]">Join thousands of users who are already managing their global payments with AlecerPay</p>
+          <button className="mt-8 bg-white text-[#007BFF] text-sm px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition">Create Your Account Now</button>
         </div>
       </section>
     </main>
